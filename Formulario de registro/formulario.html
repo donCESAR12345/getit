@@ -1,0 +1,52 @@
+<!--Formulario de registro-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Get it!</title>
+	
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+	<form id="registro" class="registro" name="datos" action="" >
+	<div class="formulario">
+	<table style="width: 30%;" class="form_registro">
+	<!--Tr es filas y td es para las columnas-->
+	
+		<tr><td><h2>Crea tu cuenta en Get it!</h2></td></tr>
+		<tr style="width: 45%">
+		<tr><td><label >Nombre(s): </label></tr></td><tr><td><input type="text" name="nombre" id="nombre" class="registro__input" style="width: 55%" required></td></tr>
+		<tr><td><label>Apellidos: </label></tr></td><tr><td><input type="text" name="apellido" class="registro__input" style="width: 55%" required></td></tr>
+		
+		
+			<tr><td><label>País: </label></td></tr>
+			<tr>
+			<td>
+			<select name="pais" required style="width: 57%">
+				<option value="">--</option>
+				<option value="Colombia">Colombia</option>
+				<option value="USA">Estados Unidos</option>
+				<option value="otro">Otro</option>	
+			</select>
+			</td></tr>
+		
+		<tr><td><label>Fecha de nacimiento: </label></td></tr><tr><td><input type="date" name="f_nac" id="f_nac" class="registro__input" style="width: 56%"  max="2020-10-01" min="1922-10-01" required></td></tr>
+		<tr><td><label>Correo electrónico: </label></td></tr><tr><td><input type="email" name="mail" id="mail" class="registro__input" style="width: 55%" required></td></tr>
+		<tr><td><label>Contraseña: </label></td></tr><tr><td><input type="password" name="passw1" id="passw1" class="registro__input" style="width: 55%" required></td></tr>
+		<div class="formulario__grupo" id="grupo__password2">
+			<tr><td><label>Confirmar contraseña: </label></td><tr><td>
+			<div class="formulario__grupo-input">
+				<input type="password" name="passw2" id="passw2" class="registro__input" style="width: 55%; margin-bottom: 30px;" required></td></tr>
+			</div>
+				<p id="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+		</div>
+		<td colspan="2"><input type="submit" name="enviar" value="Enviar datos" id="enviar_datos" style="cursor: pointer">
+		<input type="reset" name="clear" value="Limpiar datos" id="limpiar_datos" style="margin: auto; text-align: center; margin-left: 38px; cursor:pointer;"></td>
+	</form>
+	</table>
+	</div>
+
+		<script src="f_restricciones.js"></script>
+</body>
+</html>
