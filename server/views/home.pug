@@ -2,41 +2,37 @@ doctype html
 html
   head
     title Get it!
-    meta(charset='utf-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    meta(name='description' content='Página de venta de artículos online, se encuentra tecnología de última generación como celulares, , audífonos y demás. A su vez se encuentran las especificaciones técnicas de los productos así como vídeos promocionales. Se hace envíos a todo Colombia y próximamente internacionalmente.')
-    meta(name='author' content='César Augusto Montoya Ocampo y Miguel Ángel Restrepo Rueda')
-    meta(name='keywords' content='Get it, ventas, ventas online, compras, celulares, audífonos, tecnología, apple, samsung')
-    link(rel='icon' type='image/png' href='/images/icon.png')
-    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous')
-    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p' crossorigin='anonymous')
-    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js' integrity='sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB' crossorigin='anonymous')
-    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js' integrity='sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13' crossorigin='anonymous')
-    link(rel='stylesheet' type='text/css' href='/css/home.css')
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description" content="Página de venta de artículos online, se encuentra tecnología de última generación como celulares, , audífonos y demás. A su vez se encuentran las especificaciones técnicas de los productos así como vídeos promocionales. Se hace envíos a todo Colombia y próximamente internacionalmente.")
+    meta(name="author" content="César Augusto Montoya Ocampo y Miguel Ángel Restrepo Rueda")
+    meta(name="keywords" content="Get it, ventas, ventas online, compras, celulares, audífonos, tecnología, apple, samsung")
+    link(rel="icon" type="image/png" href="/images/icon.png")
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous")
+    link(rel="stylesheet" type="text/css" href="/css/" + name + ".css")
   body
-    .container-fluid
-      header
-        nav#Barra.navbar.navbar-expand-lg.nav-fill.w-100.navbar-light(style='background-color: #9CEDF5;')
-          .container-fluid
-            a#logo(href='inicio.html')
-            #logo_menu
-              a#logo(href='inicio.html')
-                img(src='/images/logo.png')
-            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-              span.navbar-toggler-icon
-            #navbarSupportedContent.collapse.navbar-collapse
-              #menu
-                ul.navbar-nav.me-auto.mb-2.mb-lg-0
-                  li.nav-item
-                    a.nav-link.active(href='inicio.html') Celulares
-                  li.nav-item
-                    a.nav-link(href='universidad.html') Audífonos
-                  li.nav-item
-                    a.nav-link(href='electronica.html') Iniciar sesión
-                  li.nav-item
-                    a.nav-link(href='cursos.html') Registrarse
-                  li.nav-item
-                    a.nav-link(href='identificar.html') Donde comprar
-                  form.d-flex
-                    input.form-control.me-2(type='search' placeholder='Buscar' aria-label='Search')
-                    button.btn.btn-outline-success(type='submit') Buscar
+    header
+      nav#Barra.navbar.navbar-expand-lg.nav-fill.w-100.navbar-light
+        a#logo(href="/")
+          img(src="/images/logo.png")
+        button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          #menu
+            ul.navbar-nav.me-auto.mb-2.mb-lg-0
+              li.nav-item
+                a.nav-link.active(href="inicio.html") Celulares
+              li.nav-item
+                a.nav-link(href="universidad.html") Audífonos
+              li.nav-item
+                a.nav-link(href="electronica.html") Iniciar sesión
+              li.nav-item
+                a.nav-link(href="cursos.html") Registrarse
+              li.nav-item
+                a.nav-link(href="identificar.html") Donde comprar
+          form.d-flex
+            input.form-control.me-2(type="search" placeholder="Buscar" aria-label="Search")
+            button.btn.btn-outline-success(type="submit") Buscar

@@ -28,7 +28,9 @@ app.use(cookieParser());
 app.use(session({ secret: "123" }));
 
 app.get("/", function(req, res) {
-  res.render("home");
+  res.render("home", {
+    name: "home"
+  });
 });
 
 //app.post("/login", function(req, res) {
