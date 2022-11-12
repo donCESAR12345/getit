@@ -99,10 +99,13 @@
     crossorigin="anonymous"></script>
 
 <body>
-  <!--Carrusel-->
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <!-- Carrusel-->
+  <div class="carousel slide" id="carouselExampleIndicators" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      <button class="active" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
         aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
         aria-label="Slide 2"></button>
@@ -115,87 +118,64 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
         aria-label="Slide 6"></button>
     </div>
-
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="Imagenes/carrusel1.jpg" id="carrusel1" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="Imagenes/carrusel2.jpg" id="carrusel2" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="Imagenes/carrusel3.jpg" id="carrusel3" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="Imagenes/carrusel4.jpg" id="carrusel4" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="Imagenes/carrusel5.jpg" id="carrusel5" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="Imagenes/carrusel6.jpg" id="carrusel6" class="d-block w-100" alt="...">
-      </div>
+      <div class="carousel-item active"><img class="carrusel d-block w-100" id="carrusel1" src="/images/carrusel1.jpg"
+          alt="..." /></div>
+      <div class="carousel-item"><img class="carrusel d-block w-100" id="carrusel2" src="/images/carrusel2.jpg"
+          alt="..." /></div>
+      <div class="carousel-item"><img class="carrusel d-block w-100" id="carrusel3" src="/images/carrusel3.jpg"
+          alt="..." /></div>
+      <div class="carousel-item"><img class="carrusel d-block w-100" id="carrusel4" src="/images/carrusel4.jpg"
+          alt="..." /></div>
+      <div class="carousel-item"><img class="carrusel d-block w-100" id="carrusel5" src="/images/carrusel5.jpg"
+          alt="..." /></div>
+      <div class="carousel-item"><img class="carrusel d-block w-100" id="carrusel6" src="/images/carrusel6.jpg"
+          alt="..." /></div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
+      data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span
+        class="visually-hidden">Previous</span></button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
-    </button>
-  </div>
-  <br><br>
+      data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+  </div><br /><br />
   <div id="Info">
-    <p id="Texto_info"> En Get it! encontraras los últimos celulares y audífonos de Apple, Samsung y Xiaomi. Además de
+    <p id="Texto_info">
+      En Get it! encontraras los últimos celulares y audífonos de Apple, Samsung y Xiaomi. Además de
       información técnica y datos detallados de estos productos.
       Contamos con envío a todo Colombia, próximamente tendremos envíos a todo Latinoamérica.
     </p>
-
-
   </div>
   <div id="Destacados">
     <h2 id="Tit_prod_dest">Productos destacados </h2>
-    <br><br>
-
-    <div class="imagen1">
-      <img class="imagen1__img" src="Imagenes/iphone14pro.png">
-      <div class="imagen1__overlay imagen1__overlay--primary">
-        <p class="imagen1__title">iPhone 14 Pro</p>
-        <a href="" class="imagen1__texto">Más información</a>
+    <div class="imagenes">
+      <div class="imagen"><img class="imagen__img" src="/images/iphone14pro.png" />
+        <div class="imagen__overlay imagen1__overlay--primary">
+          <p class="imagen__title">iPhone 14 Pro</p><a class="imagen__texto" href="#">Más información</a>
+        </div>
       </div>
-    </div>
-    <div class="imagen2">
-      <img class="imagen2__img" src="Imagenes/xiaomi12.png">
-      <div class="imagen2__overlay imagen2__overlay--primary">
-        <p class="imagen1__title">Xiaomi 12</p>
-        <a href="" class="imagen1__texto">Más información</a>
+      <div class="imagen"><img class="imagen__img" src="/images/xiaomi12.png" />
+        <div class="imagen__overlay imagen2__overlay--primary">
+          <p class="imagen__title">Xiaomi 12</p><a class="imagen__texto" href="#">Más información</a>
+        </div>
       </div>
-    </div>
-    <div class="imagen3">
-      <img class="imagen3__img" src="Imagenes/samsungs22.png">
-      <div class="imagen3__overlay imagen3__overlay--primary">
-        <p class="imagen1__title">Samsung Galaxy S22 Ultra</p>
-        <a href="" class="imagen1__texto">Más información</a>
+      <div class="imagen"><img class="imagen__img" src="/images/samsungS22.png" />
+        <div class="imagen__overlay imagen3__overlay--primary">
+          <p class="imagen__title">Samsung Galaxy S22 Ultra</p><a class="imagen__texto" href="#">Más información</a>
+        </div>
       </div>
-    </div>
-    <br><br><br>
+    </div><br /><br /><br />
     <div id="Secc_celulares">
       <h2 id="Tit_prod_dest">Celulares </h2>
       <div id="Secc_iPhone">
-        <h3 id="Tit_iPhone14">iPhone 14 Pro</h3>
-        <img src="Imagenes/secc_iPhone14pro.png" id="img_secc_iphone">
-        <p id="Secc_iPhone_text">Una forma nueva y mágica de interactuar con tu iPhone. Una funcionalidad de seguridad
+        <h3 id="Tit_iPhone14">iPhone 14 Pro</h3><img id="img_secc_iphone" src="/images/secc_iPhone14pro.png" />
+        <p id="Secc_iPhone_text">
+          Una forma nueva y mágica de interactuar con tu iPhone. Una funcionalidad de seguridad
           diseñada para salvar vidas. Una innovadora cámara de 48 MP que logra un nivel de detalle deslumbrante. Todo
-          gracias a la potencia del ultrarrápido chip A16 Bionic. Se pasa de Pro.
-          <br><br>
-          Presentamos Dynamic Island, una innovación exclusiva de Apple. Es una mezcla mágica de hardware y software que
+          gracias a la potencia del ultrarrápido chip A16 Bionic. Se pasa de Pro.<br /><br /> Presentamos Dynamic
+          Island, una innovación exclusiva de Apple. Es una mezcla mágica de hardware y software que
           te muestra la canción que suena, resultados deportivos, las llamadas de FaceTime y mucho más, sin interrumpir
-          lo que estás haciendo.
-          <br><br>
-          La pantalla siempre activa te permite tener información a la vista sin siquiera tocar la pantalla bloqueada.
+          lo que estás haciendo.<br /><br /> La pantalla siempre activa te permite tener información a la vista sin
+          siquiera tocar la pantalla bloqueada.
           Y cuando guardas el iPhone en el bolsillo o lo pones mirando hacia abajo, la pantalla se apaga para ahorrar
           batería.
           La batería
@@ -203,7 +183,7 @@
         </p>
       </div>
     </div>
-
+  </div>
 </body>
 
 </head>

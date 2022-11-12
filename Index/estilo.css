@@ -1,52 +1,4 @@
-nav{
-	box-shadow: -2px 5px 10px ;
-	border-radius: 10px;
-}
-#logo_menu{
-	margin-left: 55px;
-	margin-right: -100px;
-	text-align: center;
-	
-	
-}
-#Barra a{
-	color: black;
-}
-#menu{
-	margin-bottom: 1.3em;
-}
-
-#Donde_comprar{
-	padding-right: 4em;
-
-}
-
-#carrusel1{
-	height: 500px;
-	width: 360px;
-}
-
-#carrusel2{
-	height: 500px;
-	width: 360px;
-}
-
-#carrusel3{
-	height: 500px;
-	width: 360px;
-}
-
-#carrusel4{
-	height: 500px;
-	width: 360px;
-}
-
-#carrusel5{
-	height: 500px;
-	width: 360px;
-}
-
-#carrusel6{
+.carrusel {
 	height: 500px;
 	width: 360px;
 }
@@ -58,6 +10,7 @@ nav{
 
 #Tit_prod_dest{
 	padding-top:1.2em;
+  padding-bottom: 1.2em;
 	font-family: Courier New;
 	color: darkblue;
 	font-weight: bold;
@@ -66,25 +19,29 @@ nav{
 	font-size: 2.5em;
 }
 
+.imagenes
+{
+  display: flex;
+  justify-content: center;
+}
 
-
-.imagen1 {
-	float: left;
+.imagen {
+  position: relative;
 	margin-left: 20px;
-	position: relative;
 	height: 550px;
 	width: 480px;
 }
 
-.imagen1__img {
+.imagen__img {
+  position: absolute;
+  top: 0;
+  left: 0;
 	display: block;
 	width: 100%;
 }
 
-.imagen1__overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
+.imagen__overlay
+{
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.2);
@@ -96,73 +53,37 @@ nav{
 	justify-content: center;
 	opacity: 0;
 	transition: opacity 0.25s;
-}
-
-.imagen1__overlay--blur {
-	backdrop-filter: blur(5px);
+  z-index: 10;
 }
 
 .imagen1__overlay--primary {
 	background: #F9DB5C;
 }
 
-.imagen1__overlay>* {
+.imagen__overlay>* {
 	transform: translateY(20px);
 	transition: transform 0.25s;
 }
 
-.imagen1__overlay:hover {
+.imagen__overlay:hover {
 	opacity: 0.95;
 }
 
-.imagen1__overlay:hover>* {
+.imagen__overlay:hover>* {
 	transform: translateY(0);
 }
 
-.imagen1__title {
+.imagen__title {
 	font-size: 1.4em;
 	text-decoration: none;
 	color: black;
 }
 
-
-
-.imagen1__texto {
+.imagen__texto {
 	font-size: 1.3em;
 	text-decoration: none;
 	color: black;
 	font-weight: bold;
-}
-
-
-.imagen2 {
-	float: left;
-	
-	position: relative;
-	height: 550px;
-	width: 480px;
-}
-
-.imagen2__img {
-	display: block;
-	width: 100%;
-}
-
-.imagen2__overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.2);
-	color: #ffffff;
-	font-family: 'Quicksand', sans-serif;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	opacity: 0;
-	transition: opacity 0.25s;
 }
 
 .imagen2__overlay--blur {
@@ -173,54 +94,6 @@ nav{
 	background: rgb(34, 255, 79);
 }
 
-.imagen2__overlay>* {
-	transform: translateY(20px);
-	transition: transform 0.25s;
-}
-
-.imagen2__overlay:hover {
-	opacity: 0.95;
-}
-
-.imagen2__overlay:hover>* {
-	transform: translateY(0);
-}
-
-
-
-/* Aquí*/
-
-
-.imagen3 {
-	float: right;
-	margin-left: 20px;
-	position: relative;
-	height: 550px;
-	width: 480px;
-}
-
-.imagen3__img {
-	display: block;
-	width: 100%;
-}
-
-.imagen3__overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.2);
-	color: #ffffff;
-	font-family: 'Quicksand', sans-serif;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	opacity: 0;
-	transition: opacity 0.25s;
-}
-
 .imagen3__overlay--blur {
 	backdrop-filter: blur(5px);
 }
@@ -229,25 +102,14 @@ nav{
 	background: rgb(68, 199, 255);
 }
 
-.imagen3__overlay>* {
-	transform: translateY(20px);
-	transition: transform 0.25s;
-}
-
-.imagen3__overlay:hover {
-	opacity: 0.95;
-}
-
-.imagen3__overlay:hover>* {
-	transform: translateY(0);
-}
-
 #Secc_celulares{
 	padding-top: 570px;
 }
+
 #Secc_iPhone{
 	background: black;
 }
+
 #Tit_iPhone14{
 	margin-top: 50px;
 	font-size: 3em;
@@ -263,6 +125,3 @@ nav{
 	margin-top: -280px;
 }
 
-#img_secc_iphone{
-
-}
