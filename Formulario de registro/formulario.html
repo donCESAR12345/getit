@@ -11,9 +11,9 @@
 </head>
 
 <body>
-  <form id="registro" class="registro" name="datos" action="" method="POST">
+  <form id="registro" class="registro" name="datos" action="/register" method="POST">
     <div class="formulario">
-      <table style="width: 30%;" class="form_registro">
+      <table class="form_registro">
         <!--Tr es filas y td es para las columnas-->
         <tr>
           <td>
@@ -26,14 +26,14 @@
         </tr>
         </td>
         <tr>
-          <td><input type="text" name="firstname" id="nombre" class="registro__input" required></td>
+          <td><input type="text" name="first_name" id="nombre" class="registro__input" required></td>
         </tr>
         <tr>
           <td><label>Apellidos: </label>
         </tr>
         </td>
         <tr>
-          <td><input type="text" name="lastname" class="registro__input" required></td>
+          <td><input type="text" name="last_name" class="registro__input" required></td>
         </tr>
 
 
@@ -54,20 +54,21 @@
           <td><label>Fecha de nacimiento: </label></td>
         </tr>
         <tr>
-          <td><input type="date" name="f_nac" id="f_nac" class="registro__input" style="width: 56%" max="2020-10-01"
-              min="1922-10-01" required></td>
+          <td><input type="date" name="birthdate" id="f_nac" class="registro__input" max="2020-10-01" min="1922-10-01"
+              required></td>
         </tr>
         <tr>
           <td><label>Correo electrónico: </label></td>
         </tr>
         <tr>
-          <td><input type="email" name="mail" id="mail" class="registro__input" style="width: 55%" required></td>
+          <td><input type="email" name="email" id="mail" class="registro__input" required></td>
         </tr>
         <tr>
           <td><label>Contraseña: </label></td>
         </tr>
         <tr>
-          <td><input type="password" name="passw1" id="passw1" class="registro__input" style="width: 55%" required></td>
+          <td><input type="password" name="password" id="passw1" class="registro__input" required>
+          </td>
         </tr>
         <div class="formulario__grupo" id="grupo__password2">
           <tr>
@@ -75,16 +76,14 @@
           <tr>
             <td>
               <div class="formulario__grupo-input">
-                <input type="password" name="passw2" id="passw2" class="registro__input"
-                  style="width: 55%; margin-bottom: 30px;" required>
+                <input type="password" name="confirm_pass" id="passw2" class="registro__input" required>
             </td>
           </tr>
         </div>
         <p id="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
     </div>
-    <td colspan="2"><input type="submit" name="enviar" value="Enviar datos" id="enviar_datos" style="cursor: pointer">
-      <input type="reset" name="clear" value="Limpiar datos" id="limpiar_datos"
-        style="margin: auto; text-align: center; margin-left: 38px; cursor:pointer;">
+    <td colspan="2"><input type="submit" name="enviar" value="Enviar datos" id="enviar_datos">
+      <input type="reset" name="clear" value="Limpiar datos" id="limpiar_datos" />
     </td>
   </form>
   </table>

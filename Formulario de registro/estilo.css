@@ -5,12 +5,34 @@
 	border: 1px solid black;
 	border-radius: 10px;
 	padding-left: 8em;
-
+  width: 30%;
 	font-size: 18px;
 }
+
+#f_nac, #mail, #passw1, #passw2{
+  width: 56%;
+}
+
+#passw2
+{
+  margin-bottom: 30px;
+}
+
 #formulario__input-error {
 	display: none;
 }
+
 .formulario__input-error-activo {
 	display: block;
+}
+
+#enviar_datos {
+  cursor: pointer
+}
+        
+#limpiar_datos {
+  margin: auto;
+  text-align: center;
+  margin-left: 38px;
+  cursor:pointer;
 }
