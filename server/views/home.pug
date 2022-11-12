@@ -1,124 +1,81 @@
 include includes/head.pug
 body
-  .container-fluid
-    #menu
-      header
-        nav#Barra.navbar.navbar-expand-lg.nav-fill.w-100.navbar-light(style='background-color: #9CEDF5;')
-          .container-fluid
-            a#logo(href='inicio.html')
-            #logo_menu
-              a#logo(href='inicio.html')
-                img(src='Imagenes/Logo.png' width='40%')
-            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-              span.navbar-toggler-icon
-            #navbarSupportedContent.collapse.navbar-collapse
-              #menu
-                ul.navbar-nav.me-auto.mb-2.mb-lg-0
-                  li.nav-item
-                  li.nav-item.dropdown
-                    a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown')
-                      | Celulares
-                    ul.dropdown-menu
-                      li
-                        a.dropdown-item(href='#') Apple
-                      li
-                        a.dropdown-item(href='#') Samsung
-                      li
-                        a.dropdown-item(href='#') Xiaomi
-                  li.nav-item.dropdown
-                    a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown')
-                      | Audífonos
-                    ul.dropdown-menu
-                      li
-                        a.dropdown-item(href='#') Apple
-                      li
-                        a.dropdown-item(href='#') Samsung
-                      li
-                        a.dropdown-item(href='#') Xiaomi
-                  li.nav-item
-                    a.nav-link(href='/login')   Iniciar sesión  
-                  li.nav-item
-                    a.nav-link(href='/register') Registrarse  
-                  li.nav-item
-                    a#Donde_comprar.nav-link(href='identificar.html') Donde comprar
-                  form.d-flex
-                    input.form-control.me-2(type='search' placeholder='Buscar' aria-label='Search')
-                    button#Buscador.btn.btn-outline-success(type='submit') Buscar
-    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ' crossorigin='anonymous')
-    // Carrusel
-    #carouselExampleIndicators.carousel.slide(data-bs-ride='carousel')
-      .carousel-indicators
-        button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
-        button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2')
-        button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3')
-        button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='3' aria-label='Slide 4')
-        button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='4' aria-label='Slide 5')
-        button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='5' aria-label='Slide 6')
-      .carousel-inner
-        .carousel-item.active
-          img#carrusel1.d-block.w-100(src='Imagenes/carrusel1.jpg' alt='...')
-        .carousel-item
-          img#carrusel2.d-block.w-100(src='Imagenes/carrusel2.jpg' alt='...')
-        .carousel-item
-          img#carrusel3.d-block.w-100(src='Imagenes/carrusel3.jpg' alt='...')
-        .carousel-item
-          img#carrusel4.d-block.w-100(src='Imagenes/carrusel4.jpg' alt='...')
-        .carousel-item
-          img#carrusel5.d-block.w-100(src='Imagenes/carrusel5.jpg' alt='...')
-        .carousel-item
-          img#carrusel6.d-block.w-100(src='Imagenes/carrusel6.jpg' alt='...')
-      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.visually-hidden Previous
-      button.carousel-control-next(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
+  include includes/navbar.pug
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ' crossorigin='anonymous')
+  // Carrusel
+  #carouselExampleIndicators.carousel.slide(data-bs-ride='carousel')
+    .carousel-indicators
+      button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+      button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2')
+      button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3')
+      button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='3' aria-label='Slide 4')
+      button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='4' aria-label='Slide 5')
+      button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='5' aria-label='Slide 6')
+    .carousel-inner
+      .carousel-item.active
+        img#carrusel1.carrusel.d-block.w-100(src='Imagenes/carrusel1.jpg' alt='...')
+      .carousel-item
+        img#carrusel2.carrusel.d-block.w-100(src='Imagenes/carrusel2.jpg' alt='...')
+      .carousel-item
+        img#carrusel3.carrusel.d-block.w-100(src='Imagenes/carrusel3.jpg' alt='...')
+      .carousel-item
+        img#carrusel4.carrusel.d-block.w-100(src='Imagenes/carrusel4.jpg' alt='...')
+      .carousel-item
+        img#carrusel5.carrusel.d-block.w-100(src='Imagenes/carrusel5.jpg' alt='...')
+      .carousel-item
+        img#carrusel6.carrusel.d-block.w-100(src='Imagenes/carrusel6.jpg' alt='...')
+    button.carousel-control-prev(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.visually-hidden Previous
+    button.carousel-control-next(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+  br
+  br
+  #Info
+    p#Texto_info
+      | En Get it! encontraras los últimos celulares y audífonos de Apple, Samsung y Xiaomi. Además de
+      | información técnica y datos detallados de estos productos.
+      | Contamos con envío a todo Colombia, próximamente tendremos envíos a todo Latinoamérica.
+  #Destacados
+    h2#Tit_prod_dest Productos destacados 
     br
     br
-    #Info
-      p#Texto_info
-        | En Get it! encontraras los últimos celulares y audífonos de Apple, Samsung y Xiaomi. Además de
-        | información técnica y datos detallados de estos productos.
-        | Contamos con envío a todo Colombia, próximamente tendremos envíos a todo Latinoamérica.
-    #Destacados
-      h2#Tit_prod_dest Productos destacados 
-      br
-      br
-      .imagen1
-        img.imagen1__img(src='Imagenes/iphone14pro.png')
-        .imagen1__overlay.imagen1__overlay--primary
-          p.imagen1__title iPhone 14 Pro
-          a.imagen1__texto(href='') Más información
-      .imagen2
-        img.imagen2__img(src='Imagenes/xiaomi12.png')
-        .imagen2__overlay.imagen2__overlay--primary
-          p.imagen1__title Xiaomi 12
-          a.imagen1__texto(href='') Más información
-      .imagen3
-        img.imagen3__img(src='Imagenes/samsungs22.png')
-        .imagen3__overlay.imagen3__overlay--primary
-          p.imagen1__title Samsung Galaxy S22 Ultra
-          a.imagen1__texto(href='') Más información
-      br
-      br
-      br
-      #Secc_celulares
-        h2#Tit_prod_dest Celulares 
-        #Secc_iPhone
-          h3#Tit_iPhone14 iPhone 14 Pro
-          img#img_secc_iphone(src='Imagenes/secc_iPhone14pro.png')
-          p#Secc_iPhone_text
-            | Una forma nueva y mágica de interactuar con tu iPhone. Una funcionalidad de seguridad
-            | diseñada para salvar vidas. Una innovadora cámara de 48 MP que logra un nivel de detalle deslumbrante. Todo
-            | gracias a la potencia del ultrarrápido chip A16 Bionic. Se pasa de Pro.
-            br
-            br
-            |           Presentamos Dynamic Island, una innovación exclusiva de Apple. Es una mezcla mágica de hardware y software que
-            |           te muestra la canción que suena, resultados deportivos, las llamadas de FaceTime y mucho más, sin interrumpir
-            |           lo que estás haciendo.
-            br
-            br
-            |           La pantalla siempre activa te permite tener información a la vista sin siquiera tocar la pantalla bloqueada.
-            |           Y cuando guardas el iPhone en el bolsillo o lo pones mirando hacia abajo, la pantalla se apaga para ahorrar
-            |           batería.
-            |           La batería
-            |           te acompaña todo el día
+    .imagen1
+      img.imagen1__img(src='Imagenes/iphone14pro.png')
+      .imagen1__overlay.imagen1__overlay--primary
+        p.imagen1__title iPhone 14 Pro
+        a.imagen1__texto(href='') Más información
+    .imagen2
+      img.imagen2__img(src='Imagenes/xiaomi12.png')
+      .imagen2__overlay.imagen2__overlay--primary
+        p.imagen1__title Xiaomi 12
+        a.imagen1__texto(href='') Más información
+    .imagen3
+      img.imagen3__img(src='Imagenes/samsungs22.png')
+      .imagen3__overlay.imagen3__overlay--primary
+        p.imagen1__title Samsung Galaxy S22 Ultra
+        a.imagen1__texto(href='') Más información
+    br
+    br
+    br
+    #Secc_celulares
+      h2#Tit_prod_dest Celulares 
+      #Secc_iPhone
+        h3#Tit_iPhone14 iPhone 14 Pro
+        img#img_secc_iphone(src='Imagenes/secc_iPhone14pro.png')
+        p#Secc_iPhone_text
+          | Una forma nueva y mágica de interactuar con tu iPhone. Una funcionalidad de seguridad
+          | diseñada para salvar vidas. Una innovadora cámara de 48 MP que logra un nivel de detalle deslumbrante. Todo
+          | gracias a la potencia del ultrarrápido chip A16 Bionic. Se pasa de Pro.
+          br
+          br
+          |           Presentamos Dynamic Island, una innovación exclusiva de Apple. Es una mezcla mágica de hardware y software que
+          |           te muestra la canción que suena, resultados deportivos, las llamadas de FaceTime y mucho más, sin interrumpir
+          |           lo que estás haciendo.
+          br
+          br
+          |           La pantalla siempre activa te permite tener información a la vista sin siquiera tocar la pantalla bloqueada.
+          |           Y cuando guardas el iPhone en el bolsillo o lo pones mirando hacia abajo, la pantalla se apaga para ahorrar
+          |           batería.
+          |           La batería
+          |           te acompaña todo el día

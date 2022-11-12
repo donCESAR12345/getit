@@ -1,0 +1,44 @@
+.container-fluid
+  #menu
+    header
+      nav#Barra.navbar.navbar-expand-lg.nav-fill.w-100.navbar-light
+        .container-fluid
+          a#logo(href="/")
+          #logo_menu
+            a#logo(href="/")
+              img(src="images/logo.png")
+          button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+            span.navbar-toggler-icon
+          #navbarSupportedContent.collapse.navbar-collapse
+            #menu
+              ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                li.nav-item
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle(href="#" role="button" data-bs-toggle="dropdown")
+                    | Celulares
+                  ul.dropdown-menu
+                    li
+                      a.dropdown-item(href="#") Apple
+                    li
+                      a.dropdown-item(href="#") Samsung
+                    li
+                      a.dropdown-item(href="#") Xiaomi
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle(href="#" role="button" data-bs-toggle="dropdown")
+                    | Audífonos
+                  ul.dropdown-menu
+                    li
+                      a.dropdown-item(href="#") Apple
+                    li
+                      a.dropdown-item(href="#") Samsung
+                    li
+                      a.dropdown-item(href="#") Xiaomi
+                li.nav-item
+                  a.nav-link(href="/login")   Iniciar sesión  
+                li.nav-item
+                  a.nav-link(href="/register") Registrarse  
+                li.nav-item
+                  a#Donde_comprar.nav-link(href="#") Donde comprar
+                form.d-flex
+                  input.form-control.me-2(type="search" placeholder="Buscar" aria-label="Search")
+                  button#Buscador.btn.btn-outline-success(type="submit") Buscar
