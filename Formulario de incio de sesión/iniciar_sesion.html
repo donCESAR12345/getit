@@ -1,29 +1,52 @@
 <!--Formulario de registro-->
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Iniciar Sesión - Get it!</title>
-	<link rel="icon" type="image/png" href="Logo.png">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-</head>
-<body>
-	<form id="inicio_ses" class="inicio ses" name="datos" action="" >
-	<div class="form_sesion">
-		<table style="width: 30%;" class="form_registro">
-		<tr><td><img id="registrar_logo" src="img_registro.png"></td></tr>
-		<tr><td><h2 style="font-family: Courier New; margin: auto; margin-left: -0.5em; margin-top: 1.5em; margin-bottom: 0.8em;">Inicia Sesión</h2></td></tr>
-		<tr style="width: 45%">
-		
-			<tr><td><label>Correo electrónico: </label></tr></td><tr><td><input type="email" name="mail" id="mail"  style="width: 55%; margin-bottom:1.5em" required></td></tr>
-		<tr><td><label>Contraseña: </label></tr></td><tr><td><input type="password" name="passw" style="width: 55%; margin-bottom:4em;" required></td></tr>
-		<td colspan="2"><input type="submit" name="enviar" value="Enviar datos" id="enviar_datos" style="cursor: pointer; margin-left:-20px ">
-		<input type="reset" name="clear" value="Limpiar datos" id="limpiar_datos" style="margin: auto; text-align: center; margin-left: 15px;margin-bottom: 3em; cursor:pointer;"></td>
 
-	</form>
-	</table>
-	</div>
-	<script src="f_sesion_restricciones.js"></script>
-	</div>
-			
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar Sesión - Get it!</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+
+<body>
+  <form id="inicio_ses" class="inicio ses" name="datos" action="">
+    <div class="form_sesion">
+      <table style="width: 30%;" class="form_registro">
+        <tr>
+          <td><img id="registrar_logo" src="img_registro.png"></td>
+        </tr>
+        <tr>
+          <td>
+            <h2
+              style="font-family: Courier New; margin: auto; margin-left: -0.5em; margin-top: 1.5em; margin-bottom: 0.8em;">
+              Inicia Sesión</h2>
+          </td>
+        </tr>
+        <tr style="width: 45%">
+
+        <tr>
+          <td><label>Correo electrónico: </label>
+        </tr>
+        </td>
+        <tr>
+          <td><input type="email" name="mail" id="mail" style="width: 55%; margin-bottom:1.5em" required></td>
+        </tr>
+        <tr>
+          <td><label>Contraseña: </label>
+        </tr>
+        </td>
+        <tr>
+          <td><input type="password" name="passw" style="width: 55%; margin-bottom:4em;" required></td>
+        </tr>
+        <td colspan="2"><input type="submit" name="enviar" value="Enviar datos" id="enviar_datos"
+            style="cursor: pointer; margin-left:-20px ">
+          <input type="reset" name="clear" value="Limpiar datos" id="limpiar_datos"
+            style="margin: auto; text-align: center; margin-left: 15px;margin-bottom: 3em; cursor:pointer;">
+        </td>
+      </table>
+    </div>
+  </form>
+  <script src="f_sesion_restricciones.js"></script>
+</body>

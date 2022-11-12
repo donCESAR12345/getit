@@ -1,0 +1,32 @@
+include includes/head.pug
+body
+  include includes/navbar.pug
+  form#inicio_ses.inicio.ses(name='datos' action='')
+    .form_sesion
+      table.form_registro(style='width: 30%;')
+        tbody
+          tr
+            td
+              img#registrar_logo(src='img_registro.png')
+          tr
+            td
+              h2(style='font-family: Courier New; margin: auto; margin-left: -0.5em; margin-top: 1.5em; margin-bottom: 0.8em;')
+                | Inicia Sesión
+          tr(style='width: 45%')
+          tr
+            td
+              label Correo electrónico: 
+          tr
+            td
+              input#mail(type='email' name='mail' style='width: 55%; margin-bottom:1.5em' required='')
+          tr
+            td
+              label Contraseña: 
+          tr
+            td
+              input(type='password' name='passw' style='width: 55%; margin-bottom:4em;' required='')
+          tr
+            td(colspan='2')
+              input#enviar_datos(type='submit' name='enviar' value='Enviar datos' style='cursor: pointer; margin-left:-20px ')
+              input#limpiar_datos(type='reset' name='clear' value='Limpiar datos' style='margin: auto; text-align: center; margin-left: 15px;margin-bottom: 3em; cursor:pointer;')
+  script(src='f_sesion_restricciones.js')

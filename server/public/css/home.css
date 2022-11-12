@@ -1,27 +1,3 @@
-nav {
-	box-shadow: -2px 5px 10px ;
-	border-radius: 10px;
-  background-color: #9CEDF5;
-}
-
-#logo_menu {
-	margin-left: 55px;
-	margin-right: -100px;
-	text-align: center;
-}
-
-#Barra a {
-	color: black;
-}
-
-#menu {
-	margin-bottom: 1.3em;
-}
-
-#Donde_comprar {
-	padding-right: 4em;
-}
-
 .carrusel {
 	height: 500px;
 	width: 360px;
