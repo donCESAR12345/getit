@@ -105,14 +105,19 @@ function registerNewUser(req, res) {
   let body = req.body;
   let result = findUserInDB(body.email);
 
-  if (result.rows.length === 0) {
+  if (result === undefined) {
     console.log(body);
+    res.redirect("/");
+  }
+  else {
+    console.log("Usuario ya existe.");
+    res.redirect("/register")
   }
 }
 
 function findUserInDB(email) {
   const query = `SELECT email, password FROM users 
-    WHERE email=${email};`;
+    WHERE email='${email}';`;
   client.query(query, (err, result) => {
     if (err) {
       console.error(err);

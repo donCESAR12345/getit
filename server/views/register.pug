@@ -1,0 +1,65 @@
+include includes/head.pug
+body
+  include includes/navbar.pug
+  form#registro.registro(name='datos' action='/register' method='POST')
+      .formulario
+        #grupo__password2.formulario__grupo
+        p#formulario__input-error Ambas contraseñas deben ser iguales.
+        table.form_registro
+          // Tr es filas y td es para las columnas
+          tbody
+            tr
+              td
+                h2 Crea tu cuenta en Get it!
+            tr
+            tr
+              td
+                label Nombre(s): 
+            tr
+              td
+                input#nombre.registro__input(type='text' name='first_name' required='')
+            tr
+              td
+                label Apellidos: 
+            tr
+              td
+                input.registro__input(type='text' name='last_name' required='')
+            tr
+              td
+                label País: 
+            tr
+              td
+                select(name='country' required='')
+                  option(disabled='' value='') --
+                  option(value='CO') Colombia
+                  option(value='US') Estados Unidos
+            tr
+              td
+                label Fecha de nacimiento: 
+            tr
+              td
+                input#f_nac.registro__input(type='date' name='birthdate' max='2020-10-01' min='1922-10-01' required='')
+            tr
+              td
+                label Correo electrónico: 
+            tr
+              td
+                input#mail.registro__input(type='email' name='email' required='')
+            tr
+              td
+                label Contraseña: 
+            tr
+              td
+                input#passw1.registro__input(type='password' name='password' required='')
+            tr
+              td
+                label Confirmar contraseña: 
+            tr
+              td
+                .formulario__grupo-input
+                  input#passw2.registro__input(type='password' required='')
+            tr
+              td(colspan='2')
+                input#enviar_datos(type='submit' name='enviar' value='Enviar datos')
+                input#limpiar_datos(type='reset' name='clear' value='Limpiar datos')
+      script(src='f_restricciones.js')
