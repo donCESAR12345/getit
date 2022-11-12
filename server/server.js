@@ -23,6 +23,7 @@ app.use(express.static("public"));
 app.set("view engine", "pug");
 app.set("views", "./views");
 
+// Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({ secret: "123" }));
@@ -30,6 +31,18 @@ app.use(session({ secret: "123" }));
 app.get("/", function(req, res) {
   res.render("home", {
     name: "home"
+  });
+});
+
+app.get("/register", function(req, res) {
+  res.render("register", {
+    name: "register"
+  });
+});
+
+app.get("/login", function(req, res) {
+  res.render("login", {
+    name: "login"
   });
 });
 
