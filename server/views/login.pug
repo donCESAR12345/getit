@@ -1,13 +1,13 @@
 include includes/head.pug
 body
   include includes/navbar.pug
-  form#inicio_ses.inicio.ses(name='datos' action='')
+  form#inicio_ses.inicio.ses(name='datos' action='/login' method="POST")
     .form_sesion
       table.form_registro(style='width: 30%;')
         tbody
           tr
             td
-              img#registrar_logo(src='img_registro.png')
+              img#registrar_logo(src="/images/logo.png")
           tr
             td
               h2(style='font-family: Courier New; margin: auto; margin-left: -0.5em; margin-top: 1.5em; margin-bottom: 0.8em;')
