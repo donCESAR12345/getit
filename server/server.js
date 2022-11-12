@@ -106,12 +106,13 @@ function registerNewUser(req, res) {
   let result = findUserInDB(body.email);
 
   if (result === undefined) {
-    console.log(body);
-    res.redirect("/");
+    body.is_admin = false;
+    insertUserInDB(body);
+    res.redirect("/login");
   }
   else {
     console.log("Usuario ya existe.");
-    res.redirect("/register")
+    res.redirect("/register?error=2")
   }
 }
 
@@ -138,9 +139,9 @@ function insertUserInDB(data) {
     email, password, is_admin, first_name,
     last_name, country, birthdate)
     VALUES(
-    ${data.email}, ${data.password}, ${data.is_admin},
-    ${data.first_name}, ${data.last_name},
-    ${data.country}, ${data.birthdate}
+    '${data.email}', '${data.password}', ${data.is_admin},
+    '${data.first_name}', '${data.last_name}',
+    '${data.country}', '${data.birthdate}'
     );`;
   client.query(query, (err, result) => {
     if (err) {
