@@ -1,4 +1,4 @@
-.form_registro{
+.form_registro {
 	margin: auto;
 	margin-top: 50px;
 	background-color: whitesmoke;
@@ -9,7 +9,7 @@
 	font-size: 18px;
 }
 
-#f_nac, #mail, #passw1, #passw2{
+#f_nac, #mail, #passw1, #passw2 {
   width: 56%;
 }
 
@@ -18,18 +18,18 @@
   margin-bottom: 30px;
 }
 
-#formulario__input-error {
-	display: none;
-}
-
-.formulario__input-error-activo {
-	display: block;
-}
-
 #enviar_datos {
-  cursor: pointer
+  cursor: pointer;
 }
         
+#error_msg, #diff-passwd {
+  color: red;
+}
+
+.hidden {
+  display: none; 
+}
+
 #limpiar_datos {
   margin: auto;
   text-align: center;

@@ -3,8 +3,6 @@ body
   include includes/navbar.pug
   form#registro.registro(name='datos' action='/register' method='POST')
       .formulario
-        #grupo__password2.formulario__grupo
-        p#formulario__input-error Ambas contraseñas deben ser iguales.
         table.form_registro
           // Tr es filas y td es para las columnas
           tbody
@@ -45,6 +43,9 @@ body
             tr
               td
                 input#mail.registro__input(type='email' name='email' required='')
+                - if(error == 2) {
+                    p#error_msg El usuario ya se encuentra registrado
+                -  }
             tr
               td
                 label Contraseña: 
@@ -58,8 +59,8 @@ body
               td
                 .formulario__grupo-input
                   input#passw2.registro__input(type='password' required='')
+                  p#diff-passwd.hidden Las contraseñas no coinciden.
             tr
               td(colspan='2')
                 input#enviar_datos(type='submit' name='enviar' value='Enviar datos')
                 input#limpiar_datos(type='reset' name='clear' value='Limpiar datos')
-      script(src='f_restricciones.js')

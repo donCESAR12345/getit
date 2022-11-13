@@ -15,8 +15,6 @@ const oneDay = 1000 * 60 * 60 * 24;
 
 // Conexión a la base de datos
 const client = new Client();
-const INSERT_QUERY = "INSERT INTO users(email, password, is_admin, first_name, last_name, country, birthdate)";
-const LOGIN_QUERY = "SELECT email, password FROM users";
 client.connect();
 
 // Directorio estático 
@@ -76,60 +74,61 @@ app.get("/login", function(req, res) {
   });
 });
 
+app.get("/logout", function(req, res) {
+  req.session.destroy();
+  res.redirect("/");
+});
+
 // Manejar solicitudes POST
 app.post("/login", loginSession);
 app.post("/register", registerNewUser);
 
 function loginSession(req, res) {
   let body = req.body;
-  let result = findUserInDB(body.email);
-
-  if (result.rows.length > 0) {
-    if (result.rows[0].password === body.password) {
-      session = req.session;
-      session.userid = body.username;
-      console.log(session.userid + " has logged in!");
-      res.redirect("/");
-    }
-    else {
-      console.log("Access denied!");
-    }
-  }
-  else {
-    console.log("User not found!");
-  }
-  res.redirect("/login?error=1");
-}
-
-function registerNewUser(req, res) {
-  let body = req.body;
-  let result = findUserInDB(body.email);
-
-  if (result === undefined) {
-    body.is_admin = false;
-    insertUserInDB(body);
-    res.redirect("/login");
-  }
-  else {
-    console.log("Usuario ya existe.");
-    res.redirect("/register?error=2")
-  }
-}
-
-function findUserInDB(email) {
   const query = `SELECT email, password FROM users 
-    WHERE email='${email}';`;
+    WHERE email='${body.email}';`;
+
   client.query(query, (err, result) => {
     if (err) {
       console.error(err);
       return;
     }
     if (result.rows.length > 0) {
-      return result;
+      console.log("Usuario encontrado.");
+      if (result.rows[0].password === body.password) {
+        session = req.session;
+        session.userid = body.email;
+        console.log(session.userid + " has logged in!");
+        res.redirect("/");
+      }
+      else {
+        console.log("Access denied!");
+        res.redirect("/login?error=1");
+      }
     }
     else {
       console.log("User not found!");
-      return;
+      res.redirect("/login?error=1");
+    }
+  });
+}
+
+function registerNewUser(req, res) {
+  let body = req.body;
+  const query = `SELECT email, password FROM users 
+    WHERE email='${body.email}';`;
+  client.query(query, (err, result) => {
+    if (err) {
+      throw (err);
+    }
+    if (result === undefined) {
+      body.is_admin = false;
+      insertUserInDB(body);
+      res.redirect("/login");
+    }
+    else {
+      console.log("Usuario ya existe.");
+      res.redirect("/register?error=2")
     }
   });
 }

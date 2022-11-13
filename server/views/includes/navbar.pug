@@ -33,11 +33,17 @@
                     li
                       a.dropdown-item(href="#") Xiaomi
                 li.nav-item
-                  a.nav-link(href="/login")   Iniciar sesión  
+                  a#Donde_comprar.nav-link(href="#") Donde comprar
+                - if(!loggedIn) {
+                li.nav-item
+                  a.nav-link(href="/login")    Iniciar sesión  
                 li.nav-item
                   a.nav-link(href="/register") Registrarse  
+                -  }
+                - else {
                 li.nav-item
-                  a#Donde_comprar.nav-link(href="#") Donde comprar
+                  a.nav-link(href="/logout") Cerrar sesión  
+                -  }
                 form.d-flex
                   input.form-control.me-2(type="search" placeholder="Buscar" aria-label="Search")
                   button#Buscador.btn.btn-outline-success(type="submit") Buscar
