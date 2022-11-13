@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 // Módulos
-const path = require("path");
 const express = require("express");
 const sessions = require("express-session");
 const bodyParser = require("body-parser");
@@ -52,6 +51,11 @@ app.get("/", function(req, res) {
 
 // Renderizar página de registro
 app.get("/register", function(req, res) {
+  if (isLoggedIn(req)) {
+    res.redirect("/");
+    return;
+  }
+
   let error = req.query.error;
   if (error === undefined) {
     error = 0;
@@ -64,6 +68,11 @@ app.get("/register", function(req, res) {
 
 // Renderizar página de ingreso
 app.get("/login", function(req, res) {
+  if (isLoggedIn(req)) {
+    res.redirect("/");
+    return;
+  }
+
   let error = req.query.error;
   if (error === undefined) {
     error = 0;
@@ -75,6 +84,7 @@ app.get("/login", function(req, res) {
 });
 
 app.get("/logout", function(req, res) {
+  console.log(req.session.userid + " has logged out!");
   req.session.destroy();
   res.redirect("/");
 });
@@ -82,6 +92,13 @@ app.get("/logout", function(req, res) {
 // Manejar solicitudes POST
 app.post("/login", loginSession);
 app.post("/register", registerNewUser);
+
+function isLoggedIn(req) {
+  // Si está loggueado, regresar a la página principal
+  session = req.session;
+  // Averiguar si la cookie de loggeado existe
+  return session.userid;
+}
 
 function loginSession(req, res) {
   let body = req.body;
@@ -123,7 +140,7 @@ function registerNewUser(req, res) {
     }
     if (result === undefined) {
       body.is_admin = false;
-      insertUserInDB(body);
+      createUserInDB(body);
       res.redirect("/login");
     }
     else {
@@ -133,7 +150,7 @@ function registerNewUser(req, res) {
   });
 }
 
-function insertUserInDB(data) {
+function createUserInDB(data) {
   const query = `INSERT INTO users(
     email, password, is_admin, first_name,
     last_name, country, birthdate)
@@ -142,6 +159,20 @@ function insertUserInDB(data) {
     '${data.first_name}', '${data.last_name}',
     '${data.country}', '${data.birthdate}'
     );`;
+  client.query(query, (err, result) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    else {
+      return result;
+    }
+  });
+}
+
+function deleteUserInDB(email) {
+  const query = `DELETE FROM users WHERE
+    email = '${email}';`;
   client.query(query, (err, result) => {
     if (err) {
       console.error(err);

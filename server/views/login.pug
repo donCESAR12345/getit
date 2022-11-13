@@ -25,6 +25,9 @@ body
           tr
             td
               input(type='password' name='password' style='width: 55%; margin-bottom:4em;' required='')
+              - if(error == 1) {
+                p#error_msg Correo electrónico o contraseña equivocada.
+              - }
           tr
             td(colspan='2')
               input#enviar_datos(type='submit' name='enviar' value='Enviar datos' style='cursor: pointer; margin-left:-20px ')
